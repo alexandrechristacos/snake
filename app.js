@@ -164,6 +164,16 @@ function dessinePomme(){
 
 }
 
+function finDuJeu() {
+
+    let snakeSansTete = snake.slice(1,-1);
+    let mordu = false;
+    snakeSansTete.forEach(morceau => {
+        if(morceau.x === snake[0].x && morceau.y === snake[0].y){
+            mordu = true;
+        }
+    })
+
     const toucheMurGauche = snake[0].x < -1;
     const toucheMurDroite = snake[0].x > canvas.width - 10;
     const toucheMurTop = snake[0].y < -1;
